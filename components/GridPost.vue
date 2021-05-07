@@ -26,12 +26,6 @@ export default {
 			return this.$store.getters.activeLocal
 		},
 	},
-	watch: {
-		async activeLocal(newValue, oldValue) {
-			await this.$nextTick()
-			this.$fetch()
-		},
-	},
 }
 </script>
 

@@ -36,6 +36,12 @@
 
 <script>
 export default {
+	async validate({ $prismic, params }) {
+		const post = await $prismic.api.getByUID('blog-post', params.post, {
+			lang: params.lang,
+		})
+		return post !== undefined
+	},
 	data: () => ({
 		date: null,
 		tags: null,
@@ -62,9 +68,6 @@ export default {
 	computed: {
 		locals() {
 			return this.$store.getters.locals
-		},
-		activeLocal() {
-			return this.$store.getters.activeLocal
 		},
 	},
 	methods: {

@@ -17,6 +17,13 @@
 
 <script>
 export default {
+	async validate({ $prismic, params }) {
+		const page = await $prismic.api.getByUID('page', params.page, {
+			lang: params.lang,
+		})
+		console.log(page !== undefined)
+		return page !== undefined
+	},
 	data: () => ({
 		page: null,
 	}),
@@ -33,9 +40,6 @@ export default {
 	computed: {
 		locals() {
 			return this.$store.getters.locals
-		},
-		activeLocal() {
-			return this.$store.getters.activeLocal
 		},
 		title() {
 			return this.$prismic.asText(this.page.data.title)

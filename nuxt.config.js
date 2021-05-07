@@ -31,6 +31,9 @@ export default {
 		htmlSerializer: '@/plugins/html-serializer',
 		preview: false,
 		// disableGenerator: true, // disable module's crawler
+		apiOptions: {
+			routes: [],
+		},
 	},
 
 	styleResources: {

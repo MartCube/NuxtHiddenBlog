@@ -7,7 +7,8 @@ export default function (doc) {
 	} else if (doc.type === 'page') {
 		return `/${doc.lang}/${doc.uid}`
 	} else if (doc.type === 'blog-post') {
-		return `/${doc.lang}/post/${doc.uid}`
+		if (doc.lang === 'en-us') return `/post/${doc.uid}`
+		else return `/${doc.lang}/post/${doc.uid}`
 	}
 
 	// Default to the root

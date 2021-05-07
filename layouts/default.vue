@@ -1,16 +1,13 @@
 <template>
-	<div>
-		<Navbar />
+	<div class="default_layout">
 		<Nuxt />
+		<Navbar />
 	</div>
 </template>
 
-//
-<script>
-// export default {
-// 	mounted() {
-// 		this.$store.dispatch('loadLocals')
-// 	},
-// }
-//
-</script>
+<style lang="scss" scoped>
+.default_layout {
+	display: flex;
+	flex-direction: column-reverse;
+}
+</style>

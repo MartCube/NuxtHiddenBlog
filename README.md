@@ -1,4 +1,4 @@
-# blog
+https://nuxt-hidden-blog.netlify.app/
 
 ## Build Setup
 

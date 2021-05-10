@@ -30,10 +30,7 @@ export default {
 		linkResolver: '@/plugins/link-resolver',
 		htmlSerializer: '@/plugins/html-serializer',
 		preview: false,
-		// disableGenerator: true, // disable module's crawler
-		apiOptions: {
-			routes: [],
-		},
+		disableGenerator: true, // disable module's crawler
 	},
 
 	styleResources: {
@@ -53,6 +50,6 @@ export default {
 	},
 
 	generate: {
-		fallback: '404.html',
+		fallback: true,
 	},
 }

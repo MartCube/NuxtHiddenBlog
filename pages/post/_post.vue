@@ -3,12 +3,6 @@
 		<div v-if="!$fetchState.pending" class="post">
 			<PostImage :image-src="post_image" :image-alt="title" />
 
-			<div class="alternate locals">
-				<n-link v-for="local in locals" :key="local.id" :to="$prismic.linkResolver(local)" class="local">
-					{{ local.lang }}
-				</n-link>
-			</div>
-
 			<div class="date">
 				<i class="icon icon-calendar" />
 				{{ date }}
@@ -36,12 +30,6 @@
 
 <script>
 export default {
-	async validate({ $prismic, params }) {
-		const post = await $prismic.api.getByUID('blog-post', params.post, {
-			lang: params.lang,
-		})
-		return post !== undefined
-	},
 	data: () => ({
 		date: null,
 		tags: null,

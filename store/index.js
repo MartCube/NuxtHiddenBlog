@@ -1,6 +1,6 @@
 export const state = (context) => ({
-	activeLocal: String,
-	locals: Array,
+	activeLocal: '',
+	locals: [],
 })
 
 // Functions that return back data from state.

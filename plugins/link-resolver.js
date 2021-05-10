@@ -1,6 +1,4 @@
 export default function (doc) {
-	// Return the path depending on Prismic Document's type
-
 	if (doc.type === 'index') {
 		if (doc.lang === 'en-us') return '/'
 		else return `/${doc.lang}/`

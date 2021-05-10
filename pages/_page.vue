@@ -2,11 +2,6 @@
 	<div class="container">
 		<template v-if="!$fetchState.pending">
 			<h2>{{ title }}</h2>
-			<div class="alternate locals">
-				<n-link v-for="local in locals" :key="local.id" :to="$prismic.linkResolver(local)" class="local">
-					{{ local.lang }}
-				</n-link>
-			</div>
 
 			<div v-for="slice in slices" :key="slice.slice_type">
 				<GridPost v-if="slice.slice_type === 'grid_post'" />
@@ -21,7 +16,6 @@ export default {
 		const page = await $prismic.api.getByUID('page', params.page, {
 			lang: params.lang,
 		})
-		console.log(page !== undefined)
 		return page !== undefined
 	},
 	data: () => ({
@@ -29,12 +23,10 @@ export default {
 	}),
 	async fetch() {
 		// console.log(this.$route)
-
 		const page = await this.$prismic.api.getByUID('page', this.$route.params.page, {
 			lang: this.$route.params.lang,
 		})
 		this.$store.dispatch('loadLocals', page)
-
 		this.page = page
 	},
 	computed: {

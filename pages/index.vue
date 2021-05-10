@@ -2,11 +2,6 @@
 	<div class="container">
 		<template v-if="!$fetchState.pending">
 			<h2>{{ title }}</h2>
-			<div class="alternate locals">
-				<n-link v-for="local in locals" :key="local.id" :to="$prismic.linkResolver(local)" class="local">
-					{{ local.lang }}
-				</n-link>
-			</div>
 		</template>
 	</div>
 </template>

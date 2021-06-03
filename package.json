@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@nuxtjs/prismic": "^1.2.6",
-    "@nuxtjs/style-resources": "^1.0.0",
+    "@nuxtjs/style-resources": "^1.1.0",
     "core-js": "^3.9.1",
     "lazysizes": "^5.3.2",
     "nuxt": "^2.15.3"
